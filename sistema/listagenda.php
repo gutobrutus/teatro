@@ -37,7 +37,7 @@ if (isset ( $_SESSION ['logado'] )) :
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">S-GAT</a>
+				<a class="navbar-brand" href="principal.php">S-GAT</a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right">
