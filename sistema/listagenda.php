@@ -154,6 +154,7 @@ if (isset ( $_SESSION ['logado'] )) :
 
  <?php
  	else :
-		header ( 'Location: naopermitido.html' );
+		$redi = include 'naopermitido.html';
+ 		echo $redi;
 	endif;
 ?>
