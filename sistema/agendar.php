@@ -97,7 +97,7 @@ if (isset($_SESSION['logado'])):
 
 			<div class="form-group col-md-12">
 				<label for="campo4">Descrição</label> 
-				<input type="textarea" rows="5" class="form-control" id="campo4" required="" name="descricao">
+				<textarea rows="5" class="form-control" id="campo4" required="" name="descricao"></textarea>
 			</div>
 	
 	</div>
