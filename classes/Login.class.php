@@ -18,13 +18,14 @@
 		
 		public function logar(){
 			$pdo = parent::getDB();
-			$logar = $pdo->prepare("SELECT * FROM usuarios WHERE login = ? AND senha = ?");
+			$logar = $pdo->prepare("SELECT login, senha, nome FROM usuarios WHERE login = ? AND senha = ?");
 			$logar->bindValue(1,$this->getLogin());
 			$logar->bindValue(2,$this->getSenha());
 			$logar->execute();
 			if($logar->rowCount() == 1):
 				$dados = $logar->fetch(PDO::FETCH_OBJ);
 				$_SESSION['usuario'] = $dados->login;
+				$_SESSION['nome'] = $dados->nome;
 				$_SESSION['logado'] = true;
 				return true;
 			else:
