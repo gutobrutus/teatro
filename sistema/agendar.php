@@ -105,7 +105,7 @@ if (isset($_SESSION['logado'])):
 	<!-- area de campos do formulario -->
 
 	<hr />
-	<div id="actions" class="row">
+	<div id="actions" class="row" align="center">
 		<div class="col-md-12">
 			<button type="submit" class="btn btn-primary">Salvar</button>
 			<a href="index.html" class="btn btn-default">Cancelar</a>
