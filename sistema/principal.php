@@ -48,7 +48,7 @@ if (isset($_SESSION['logado'])):
 	</nav>
 	<div id="main" class="container-fluid">
 		</br>
-		<h3 class="page-header">Seja bem vindo! <?php echo $_SESSION['usuario']; ?></h3>
+		<h3 class="page-header">Seja bem vindo, <?php echo $_SESSION['nome']; ?></h3>
 	</div>
 	<script src="../bootstrap/js/jquery.min.js"></script>
 	<script src="../bootstrap/js/bootstrap.min.js"></script>
