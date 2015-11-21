@@ -57,7 +57,7 @@ if (isset($_SESSION['logado'])):
 	<div id="main" class="container-fluid">
 		</br>
 		<!-- <h3 class="page-header">Seja bem vindo!</h3>  -->
-		<h3 class="page-header">Seja bem vindo! <?php echo $_SESSION['usuario']; ?></h3>
+		<h3 class="page-header">Seja bem vindo, <?php echo $_SESSION['nome']; ?></h3>
 	</div>
 
 
@@ -78,16 +78,16 @@ if (isset($_SESSION['logado'])):
 
 
 			<script>
-			$(function() {
-    			$("#calendario").datepicker({
-        			dateFormat: 'dd/mm/yy',
-        			dayNames: ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado','Domingo'],
-        			dayNamesMin: ['D','S','T','Q','Q','S','S','D'],
-        			dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb','Dom'],
-        			monthNames: ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
-        			monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez']
-    			});
-			});
+				$(function() {
+					$("#calendario").datepicker({
+						dateFormat : 'dd/mm/yy',
+						dayNames : ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo'],
+						dayNamesMin : ['D', 'S', 'T', 'Q', 'Q', 'S', 'S', 'D'],
+						dayNamesShort : ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'],
+						monthNames : ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+						monthNamesShort : ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez']
+					});
+				}); 
 </script>
 
 			<div class="form-group col-md-3">
@@ -119,8 +119,8 @@ if (isset($_SESSION['logado'])):
 </body>
 </html>
  <?php
- else :
-	$redi = include 'naopermitido.html';
- 	echo $redi;
+else :
+$redi = include 'naopermitido.html';
+echo $redi;
 endif;
 ?>

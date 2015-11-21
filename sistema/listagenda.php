@@ -52,7 +52,7 @@ if (isset ( $_SESSION ['logado'] )) :
 
 	<div id="main" class="container-fluid">
 		</br>
-		<h3 class="page-header">Seja bem vindo! <?php echo $_SESSION['usuario']; ?></h3>
+		<h3 class="page-header">Seja bem vindo, <?php echo $_SESSION['nome']; ?></h3>
 	</div>
 
 	<div id="main" class="container-fluid">
@@ -106,10 +106,10 @@ if (isset ( $_SESSION ['logado'] )) :
 					<?php 
 						$eventos = new Eventos;
 						foreach($eventos->buscarTodos() as $key => $value):	?>
-						<td><?php echo $value->id; ?></td>
-						<td><?php echo $value->titulo; ?></td>
-						<td><?php echo $value->data; ?></td>
-						<td><?php echo $value->hora; ?></td>
+						<td><?php echo $value -> id; ?></td>
+						<td><?php echo $value -> titulo; ?></td>
+						<td><?php echo $value -> data; ?></td>
+						<td><?php echo $value -> hora; ?></td>
 						<td class="actions"><a class="btn btn-success btn-xs" href="view.php">Visualizar</a> 
 						<!--  <a class="btn btn-warning btn-xs" href="edit.html">Editar</a> -->
 						<!--   <a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" -->
@@ -153,8 +153,8 @@ if (isset ( $_SESSION ['logado'] )) :
 </html>
 
  <?php
- 	else :
-		$redi = include 'naopermitido.html';
- 		echo $redi;
-	endif;
+else :
+$redi = include 'naopermitido.html';
+echo $redi;
+endif;
 ?>

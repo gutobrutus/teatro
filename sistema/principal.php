@@ -56,8 +56,8 @@ if (isset($_SESSION['logado'])):
 </html>
 
  <?php
- else :
-	$redi = include 'naopermitido.html';
- 	echo $redi;
+else :
+$redi = include 'naopermitido.html';
+echo $redi;
 endif;
 ?>

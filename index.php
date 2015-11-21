@@ -1,28 +1,27 @@
-<?php 
+<?php
 session_start();
 //require_once 'classes/conexao.class.php';
 //require_once 'classes/login.class.php';
 function __autoload($classes) {
-	require_once 'classes/'.$classes.'.class.php';
+    require_once 'classes/' . $classes . '.class.php';
 }
-	
-	
-	if (isset($_POST['entrar'])):
-		$login = filter_input(INPUT_POST,"login", FILTER_SANITIZE_MAGIC_QUOTES);
-		$senha = filter_input(INPUT_POST, "senha", FILTER_SANITIZE_MAGIC_QUOTES);
-		
-		//$select = new Crud;
-		
-		$l = new Login;
-		$l->setLogin($login);
-		$l->setSenha($senha);
-		
-		if ($l->logar()):
-			header("Location: sistema/principal.php");
-		else:
-			$erro = "Erro ao acessar o sistema, verifique sua senha e/ou login.";
-		endif;
-	endif;
+
+if (isset($_POST['entrar'])) :
+    $login = filter_input(INPUT_POST, "login", FILTER_SANITIZE_MAGIC_QUOTES);
+    $senha = filter_input(INPUT_POST, "senha", FILTER_SANITIZE_MAGIC_QUOTES);
+
+    //$select = new Crud;
+
+    $l = new Login;
+    $l -> setLogin($login);
+    $l -> setSenha($senha);
+
+    if ($l -> logar()) :
+        header("Location: sistema/principal.php");
+    else :
+        $erro = "Erro ao acessar o sistema, verifique sua senha e/ou login.";
+    endif;
+endif;
 ?>
 <!DOCTYPE html>
 <html lang="pt_br">
@@ -60,7 +59,7 @@ function __autoload($classes) {
               <button class="btn btn-primary btn-lg btn-block" type="submit" name="entrar">Acessar</button>
               <span class="pull-right"><a href="sistema/cadusuario.php">Registrar-se</a></span><span><a href="#">Precisa de ajuda?</a></span>
             </div>
-            <p style="color: red"><?php echo isset($erro)? $erro : ''; ?></p>
+            <p style="color: red"><?php echo isset($erro) ? $erro : ''; ?></p>
           </form>
       </div>
       <div class="modal-footer">
