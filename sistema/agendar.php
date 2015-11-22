@@ -15,7 +15,7 @@ if (isset($_SESSION['logado'])):
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<!-- <meta charset="utf-8"> -->
+<meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sistema de Gerenciamento de Agenda do Teatro</title>
@@ -31,6 +31,32 @@ if (isset($_SESSION['logado'])):
 </head>
 
 <body>
+    <?php
+    if (isset($_POST['salvar'])) :
+        $login = $_SESSION['usuario'];
+        $titulo = filter_input(INPUT_POST, "titulo", FILTER_SANITIZE_MAGIC_QUOTES);
+        $data = filter_input(INPUT_POST, "data", FILTER_SANITIZE_MAGIC_QUOTES);
+        $hora = filter_input(INPUT_POST, "hora", FILTER_SANITIZE_MAGIC_QUOTES);
+        $descricao = filter_input(INPUT_POST, "descricao", FILTER_SANITIZE_MAGIC_QUOTES);
+        $situacao = 1;
+        //Situação 1 para evento solicitado - padrão para solicitação
+
+        $evento = new Eventos;
+        $evento -> setLogin($login);
+        $evento -> setTitulo($titulo);
+        $evento -> setData($data);
+        $evento -> setHora($hora);
+        $evento -> setDescricao($descricao);
+        $evento -> setSituacao($situacao);
+        
+        if($evento->inserir()) {?>
+            ?><script type="text/javascript">
+                <!--//-->
+                window.alert("Solicitação de pauta de evento cadastrada com sucesso!");
+            </script>
+        <?php }
+    endif;
+    ?>
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -64,7 +90,7 @@ if (isset($_SESSION['logado'])):
 
 	<div id="main" class="container-fluid">
 		<h3 class="page-header">Solicitar Agenda</h3>
-		<form action="index.html">
+		<form action="" method="post">
 
 			<div class="form-group col-md-6">
 				<label for="campo1">Título</label> 
@@ -72,7 +98,7 @@ if (isset($_SESSION['logado'])):
 			</div>
 
 			<div class="form-group col-md-3">
-				<label for="calendario">Data (DD/MM/AAAA)</label> 
+				<label for="calendario">Data (dd/mm/aaaa)</label> 
 				<input type="text"class="form-control" id="calendario" required="" name="data">
 			</div>
 
@@ -87,11 +113,11 @@ if (isset($_SESSION['logado'])):
 						monthNames : ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
 						monthNamesShort : ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez']
 					});
-				}); 
-</script>
+				});
+            </script>
 
 			<div class="form-group col-md-3">
-				<label for="hora">Hora (HH:MM)</label> 
+				<label for="hora">Hora (hh:mm)</label> 
 				<input type="time" class="form-control" name="hora" required="" name="hora">
 			</div>
 
