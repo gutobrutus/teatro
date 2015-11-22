@@ -1,6 +1,5 @@
 <?php
 require_once 'Crud.class.php';
-require_once 'Funcoes.class.php';
 
 class Eventos extends Crud {
     protected $table = 'eventos';
