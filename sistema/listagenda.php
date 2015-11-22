@@ -3,7 +3,7 @@ session_start ();
 function __autoload($classes) {
 	require '../classes/' . $classes . '.class.php';
 }
-
+ 
 if (isset ( $_GET ['logout'] )) :
 	if ($_GET ['logout'] == 'ok') :
 		Login::deslogar ();
@@ -91,7 +91,7 @@ if (isset ( $_SESSION ['logado'] )) :
 		<div class="table-responsive col-md-12">
 			<table class="table table-striped" cellspacing="0" cellpadding="0">
 				<thead>
-					<tr>
+				    <tr>
 						<th>Id</th>
 						<th>Título</th>
 						<th>Hora</th>
@@ -105,10 +105,14 @@ if (isset ( $_SESSION ['logado'] )) :
 					
 					<?php 
 						$eventos = new Eventos;
-						foreach($eventos->buscarTodos() as $key => $value):	?>
+                        foreach($eventos->buscarTodos() as $key => $value):	?>
 						<td><?php echo $value -> id; ?></td>
 						<td><?php echo $value -> titulo; ?></td>
-						<td><?php echo $value -> data; ?></td>
+						<?php $dataBR = new Funcoes; ?>	
+						<td><?php 
+						      $data = $value -> data;
+                              echo ($dataBR->dateToBR($data)); 
+						    ?></td>
 						<td><?php echo $value -> hora; ?></td>
 						<td class="actions"><a class="btn btn-success btn-xs" href="view.php">Visualizar</a> 
 						<!--  <a class="btn btn-warning btn-xs" href="edit.html">Editar</a> -->
