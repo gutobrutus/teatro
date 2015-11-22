@@ -49,63 +49,80 @@ if (isset($_SESSION['logado'])):
 
 	<div id="main" class="container-fluid">
 		</br>
-		<h3 class="page-header">Seja bem vindo! <?php echo $_SESSION['usuario']; ?></h3>
+		<h3 class="page-header">Seja bem vindo! <?php echo $_SESSION['nome']; ?></h3>
 	</div>
 
 	<!-- Tela de Vizualização a partir daqui -->
 
 	<div id="main" class="container-fluid">
-		<h3 class="page-header">Visualizar Pauta"ID"</h3>
-		<form action="index.html">
-
+		<h3 class="page-header">Solicitação de Pauta Id: <?php echo $_GET['id'] ?></h3>
+		<form action="">
+        <?php
+        $evento = new Eventos;
+        $id = $_GET['id'];
+        $rs = $evento -> buscar($id);
+        ?>
+            
 			<div class="row">
 
 				<div class="col-md-4">
 					<p>
-						<strong>Login</strong>
+						<strong>Login solicitante:</strong>
 					</p>
-					<p>{Valor do Campo}</p>
+					<p><?php echo $rs['login']; ?></p>
 				</div>
 
 				<div class="col-md-12">
 					<p>
-						<strong>Título</strong>
+						<strong>Título do Evento:</strong>
 					</p>
-					<p>{Valor do Campo}</p>
+					<p><?php echo $rs['titulo']; ?></p>
 				</div>
 
 				<div class="col-md-12">
 					<p>
-						<strong>Descrição</strong>
+						<strong>Descrição:</strong>
 					</p>
-					<p>{Valor do Campo}</p>
+					<p><?php echo $rs['descricao']; ?></p>
 				</div>
 
 				<div class="col-md-4">
 					<p>
-						<strong>Hora</strong>
+						<strong>Hora:</strong>
 					</p>
-					<p>{Valor do Campo}</p>
+					<p><?php echo $rs['hora']; ?></p>
 				</div>
 
 				<div class="col-md-4">
 					<p>
-						<strong>Data</strong>
+						<strong>Data:</strong>
 					</p>
-					<p>{Valor do Campo}</p>
+					<p><?php
+                    $dataUS = $rs['data'];
+                    echo($evento -> dateToBR($dataUS));
+					    ?>
+					</p>
 				</div>
 
 				<div class="col-md-4">
 					<p>
-						<strong>Situação</strong>
+						<strong>Situação:</strong>
 					</p>
-					<p>{Valor do Campo}</p>
+					<p>
+					    <?php
+					       $situacao =  $rs['situacao'];
+                           echo ($evento->situacoes($situacao)); 
+					    ?>
+					</p>
 				</div>
 
 
 			</div>
-
-
+            <div id="actions" class="row" align="center">
+                <div class="col-md-12">
+                <a href="listagenda.php" class="btn btn-primary">Voltar</a>
+            </div>
+    </div>
 
 		</form>
 
@@ -116,8 +133,8 @@ if (isset($_SESSION['logado'])):
 </html>
  
 <?php
- else :
-	$redi = include 'naopermitido.html';
- 	echo $redi;
+else :
+$redi = include 'naopermitido.html';
+echo $redi;
 endif;
 ?>
