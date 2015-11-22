@@ -57,7 +57,7 @@ if (isset ( $_SESSION ['logado'] )) :
 
 	<div id="main" class="container-fluid">
 		<h3 class="page-header">Lista de Pautas</h3>
-		<form action="index.html">
+		<form action="">
 
 			<!-- <div id="main" class="container-fluid">
      <div id="top" class="row">
@@ -94,8 +94,9 @@ if (isset ( $_SESSION ['logado'] )) :
 				    <tr>
 						<th>Id</th>
 						<th>Título</th>
-						<th>Hora</th>
 						<th>Data</th>
+						<th>Hora</th>
+						<th>Situação</th>
 						<th class="actions">Ações</th>
 					</tr>
 				</thead>
@@ -104,18 +105,24 @@ if (isset ( $_SESSION ['logado'] )) :
 					<tr>
 					
 					<?php 
-						$eventos = new Eventos;
-                        foreach($eventos->buscarTodos() as $key => $value):	?>
+						$evento = new Eventos;
+                        foreach($evento->buscarTodos() as $key => $value):	?>
 						<td><?php echo $value -> id; ?></td>
 						<td><?php echo $value -> titulo; ?></td>	
 						<td>
-						    <?php 
-						      $dataUS =  $value -> data;
-                              echo ($eventos->dateToBR($dataUS)); 
+						    <?php
+                            $dataUS = $value -> data;
+                            echo($evento -> dateToBR($dataUS));
                             ?>
                         </td>
 						<td><?php echo $value -> hora; ?></td>
-						<td class="actions"><a class="btn btn-success btn-xs" href="view.php">Visualizar</a> 
+						<td>
+						    <?php
+						      $situacao = $value -> situacao;
+						      echo ($evento->situacoes($situacao));
+						    ?>
+						</td>
+						<td class="actions"><a class="btn btn-success btn-xs" href="view.php?id=<?php echo $value -> id; ?>">Visualizar</a> 
 						<!--  <a class="btn btn-warning btn-xs" href="edit.html">Editar</a> -->
 						<!--   <a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" -->
 						<!--    data-target="#delete-modal">Excluir</a>--> <!--  </td> -->
