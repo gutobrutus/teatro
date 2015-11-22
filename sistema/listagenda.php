@@ -78,7 +78,7 @@ if (isset ( $_SESSION ['logado'] )) :
    	 	</div> -->
 
 			<div class="col-md-12">
-				<a href="add.html" class="btn btn-primary pull-right h2">Nova
+				<a href="agendar.php" class="btn btn-primary pull-right h2">Nova
 					Solicitação</a>
 			</div>
 	
@@ -107,12 +107,13 @@ if (isset ( $_SESSION ['logado'] )) :
 						$eventos = new Eventos;
                         foreach($eventos->buscarTodos() as $key => $value):	?>
 						<td><?php echo $value -> id; ?></td>
-						<td><?php echo $value -> titulo; ?></td>
-						<?php $dataBR = new Funcoes; ?>	
-						<td><?php 
-						      $data = $value -> data;
-                              echo ($dataBR->dateToBR($data)); 
-						    ?></td>
+						<td><?php echo $value -> titulo; ?></td>	
+						<td>
+						    <?php 
+						      $dataUS =  $value -> data;
+                              echo ($eventos->dateToBR($dataUS)); 
+                            ?>
+                        </td>
 						<td><?php echo $value -> hora; ?></td>
 						<td class="actions"><a class="btn btn-success btn-xs" href="view.php">Visualizar</a> 
 						<!--  <a class="btn btn-warning btn-xs" href="edit.html">Editar</a> -->
