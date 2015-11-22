@@ -25,6 +25,26 @@ class Funcoes {
         $dOk = $this -> dateTimeToUS($d[0]) . ' ' . $d[1];
         return $dOk;
     }
+    
+    public function situacoes($situacao){
+    switch ($situacao) {
+        case 1:
+            echo "Solicitado";
+            break;
+        case 2:
+            echo "Autorizado";
+            break;
+        case 3:
+            echo "Aguardando Pgto";
+            break;
+        case 4:
+            echo "Confirmado";
+            break;
+        default:
+            echo "Sem status cadastrado";
+            break;
+    }
+    }
 
 }
 ?>
