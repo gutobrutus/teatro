@@ -107,8 +107,8 @@ if (isset($_SESSION['logado'])):
 	<hr />
 	<div id="actions" class="row" align="center">
 		<div class="col-md-12">
-			<button type="submit" class="btn btn-primary">Salvar</button>
-			<a href="index.html" class="btn btn-default">Cancelar</a>
+			<button type="submit" class="btn btn-primary" name="salvar">Salvar</button>
+			<a href="principal.php" class="btn btn-danger">Cancelar</a>
 
 		</div>
 	</div>

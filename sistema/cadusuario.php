@@ -22,21 +22,20 @@ if (isset($_POST['cadastrar'])):
 		
 	}else{
 		$usuario = new Usuarios();
-		$usuario->setLogin($login);
-		$usuario->setSenha($senha);
-		$usuario->setNome($nome);
-		$usuario->setEmail($email);
+		$usuario -> setLogin($login);
+		$usuario -> setSenha($senha);
+		$usuario -> setNome($nome);
+		$usuario -> setEmail($email);
 		//Inserindo na tabela usuários
 		if($usuario->inserir()){
 			?><script type="text/javascript">
-			<!--//-->
+				<!--//-->
 				window.alert("Usuário cadastrado com sucesso!");
 			</script>
 	<?php }
-	}
-endif;
-
-?>
+                }
+                endif;
+            ?>
 <!DOCTYPE html>
 <html lang="pt_br">
 <head>
@@ -92,7 +91,7 @@ endif;
 										placeholder="Digite novamente a senha"
 										class="form-control input-md" required="" type="password">
 								</div>
-								<p style="color: red"><?php echo isset($erro_senha)? $erro_senha : ''; ?></p>
+								<p style="color: red"><?php echo isset($erro_senha) ? $erro_senha : ''; ?></p>
 							</div>
 
 							<!-- Text input-->
@@ -124,7 +123,7 @@ endif;
 										placeholder="Digite novamente o e-mail"
 										class="form-control input-md" type="email">
 								</div>
-								<p style="color: red"><?php echo isset($erro_email)? $erro_email : ''; ?></p>
+								<p style="color: red"><?php echo isset($erro_email) ? $erro_email : ''; ?></p>
 							</div>
 							
 
