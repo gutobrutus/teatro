@@ -43,6 +43,7 @@ class Funcoes {
         default:
             echo "Sem Status Cadastrado";
             break;
+            
     }
     }
 
