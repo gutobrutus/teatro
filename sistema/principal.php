@@ -41,7 +41,7 @@ if (isset($_SESSION['logado'])):
 					<li><a href="../sistema/listagenda.php">Listar Agenda</a></li>
 					<li><a href="../sistema/agendar.php">Solicitar Agenda</a></li>
 					<li><a href="principal.php?logout=ok">Sair</a></li>
-					<li><a href="../sistema/ajuda.html">Ajuda</a></li>
+					<li><a href="../sistema/ajuda.php">Ajuda</a></li>
 				</ul>
 			</div>
 		</div>
