@@ -41,7 +41,7 @@ class Funcoes {
             echo "Confirmado";
             break;
         default:
-            echo "Sem status cadastrado";
+            echo "Sem Status Cadastrado";
             break;
     }
     }
