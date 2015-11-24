@@ -45,7 +45,8 @@ endif;
   <div class="modal-content">
       <div class="modal-header">
           <!-- <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>-->
-          <h1 class="text-center">Acessar o Sistema</h1>
+          <img src="sistema/img/sgat170x240.png" class="img-responsive" width="60" height="100" align="center" alt="Logomarca do Sgat"> 
+          <h3 class="text-center">Acessar o Sistema</h3>
       </div>
       <div class="modal-body">
           <form class="form col-md-12 center-block">
@@ -57,7 +58,7 @@ endif;
             </div>
             <div class="form-group">
               <button class="btn btn-primary btn-lg btn-block" type="submit" name="entrar">Acessar</button>
-              <span class="pull-right"><a href="sistema/cadusuario.php">Registrar-se</a></span><span><a href="#">Precisa de ajuda?</a></span>
+              <span class="pull-right"><a href="sistema/cadusuario.php">Registrar-se</a></span>
             </div>
             <p style="color: red"><?php echo isset($erro) ? $erro : ''; ?></p>
           </form>
