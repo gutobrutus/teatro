@@ -45,7 +45,7 @@ endif;
   <div class="modal-content">
       <div class="modal-header">
           <!-- <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>-->
-          <div align="center"><img src="sistema/img/sgat170x240.png" class="img-responsive" width="60" height="100" align="center" alt="Logomarca do Sgat"></div> 
+          <div align="center"><img src="sistema/img/sgat170x240.png" class="img-responsive" width="60" height="100" alt="Logomarca do Sgat"></div> 
           <h3 class="text-center">Acessar o Sistema</h3>
       </div>
       <div class="modal-body">
@@ -66,7 +66,7 @@ endif;
       <div class="modal-footer">
           <div class="col-md-12">
               
-             </div>	
+          </div>	
       </div>
   </div>
   </div>

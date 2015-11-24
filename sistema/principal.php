@@ -50,6 +50,9 @@ if (isset($_SESSION['logado'])):
 	<div id="main" class="container-fluid">
 		</br>
 		<h3 class="page-header">Seja bem vindo, <?php echo $_SESSION['nome']; ?></h3>
+		<div align="center">
+		    <img src="img/big.jpg" class="img-responsive" width="260" height="300" alt="Logomarca do SGAT">		    
+		</div>
 	</div>
 	<script src="../bootstrap/js/jquery.min.js"></script>
 	<script src="../bootstrap/js/bootstrap.min.js"></script>
