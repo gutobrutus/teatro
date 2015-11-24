@@ -55,7 +55,7 @@ if (isset($_SESSION['logado'])):
 	<!-- Tela de VizualizaÃ§Ã£o a partir daqui -->
 
 	<div id="main" class="container-fluid">
-		<h3 class="page-header">SolicitaÃ§Ã£o de Pauta Id: <?php echo $_GET['id'] ?></h3>
+		<h3 class="page-header">Solicitação de Pauta Id: <?php echo $_GET['id'] ?></h3>
 		<form action="">
         <?php
         $evento = new Eventos;
@@ -74,14 +74,14 @@ if (isset($_SESSION['logado'])):
 
 				<div class="col-md-12">
 					<p>
-						<strong>TÃ­tulo do Evento:</strong>
+						<strong>Título do Evento:</strong>
 					</p>
 					<p><?php echo $rs['titulo']; ?></p>
 				</div>
 
 				<div class="col-md-12">
 					<p>
-						<strong>DescriÃ§Ã£o:</strong>
+						<strong>Descrição:</strong>
 					</p>
 					<p><?php echo $rs['descricao']; ?></p>
 				</div>
@@ -106,7 +106,7 @@ if (isset($_SESSION['logado'])):
 
 				<div class="col-md-4">
 					<p>
-						<strong>SituaÃ§Ã£o:</strong>
+						<strong>Situação:</strong>
 					</p>
 					<p>
 					    <?php

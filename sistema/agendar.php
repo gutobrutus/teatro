@@ -39,6 +39,7 @@ if (isset($_SESSION['logado'])):
         $hora = filter_input(INPUT_POST, "hora", FILTER_SANITIZE_MAGIC_QUOTES);
         $descricao = filter_input(INPUT_POST, "descricao", FILTER_SANITIZE_MAGIC_QUOTES);
         $situacao = 1;
+        
         //Situação 1 para evento solicitado - padrão para solicitação
 
         $evento = new Eventos;
@@ -52,7 +53,7 @@ if (isset($_SESSION['logado'])):
         if($evento->inserir()) {?>
             ?><script type="text/javascript">
                 <!--//-->
-                window.alert("Solicitação de pauta de evento cadastrada com sucesso!");
+                window.alert("Solicita��o de pauta de evento cadastrada com sucesso!");
             </script>
         <?php }
     endif;
@@ -93,7 +94,7 @@ if (isset($_SESSION['logado'])):
 		<form action="" method="post">
 
 			<div class="form-group col-md-6">
-				<label for="campo1">Título</label> 
+				<label for="campo1">T�tulo</label> 
 				<input type="text" class="form-control" id="campo1" required="" name="titulo">
 			</div>
 
@@ -110,7 +111,7 @@ if (isset($_SESSION['logado'])):
 						dayNames : ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo'],
 						dayNamesMin : ['D', 'S', 'T', 'Q', 'Q', 'S', 'S', 'D'],
 						dayNamesShort : ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'],
-						monthNames : ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+						monthNames : ['Janeiro', 'Fevereiro', 'Mar�o', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
 						monthNamesShort : ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez']
 					});
 				});
@@ -122,7 +123,7 @@ if (isset($_SESSION['logado'])):
 			</div>
 
 			<div class="form-group col-md-12">
-				<label for="campo4">Descrição</label> 
+				<label for="campo4">Descri��o</label> 
 				<textarea rows="5" class="form-control" id="campo4" required="" name="descricao"></textarea>
 			</div>
 	

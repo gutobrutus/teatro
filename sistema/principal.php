@@ -46,6 +46,7 @@ if (isset($_SESSION['logado'])):
 			</div>
 		</div>
 	</nav>
+	
 	<div id="main" class="container-fluid">
 		</br>
 		<h3 class="page-header">Seja bem vindo, <?php echo $_SESSION['nome']; ?></h3>

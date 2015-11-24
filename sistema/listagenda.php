@@ -93,11 +93,11 @@ if (isset ( $_SESSION ['logado'] )) :
 				<thead>
 				    <tr>
 						<th>Id</th>
-						<th>TÃ­tulo</th>
+						<th>Título</th>
 						<th>Data</th>
 						<th>Hora</th>
-						<th>SituaÃ§Ã£o</th>
-						<th class="actions">AÃ§Ãµes</th>
+						<th>Situação</th>
+						<th class="actions">Ações</th>
 					</tr>
 				</thead>
 				<tbody>
