@@ -45,7 +45,7 @@ endif;
   <div class="modal-content">
       <div class="modal-header">
           <!-- <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>-->
-          <img src="sistema/img/sgat170x240.png" class="img-responsive" width="60" height="100" align="center" alt="Logomarca do Sgat"> 
+          <div align=""><img src="sistema/img/sgat170x240.png" class="img-responsive" width="60" height="100" align="center" alt="Logomarca do Sgat"></div> 
           <h3 class="text-center">Acessar o Sistema</h3>
       </div>
       <div class="modal-body">
